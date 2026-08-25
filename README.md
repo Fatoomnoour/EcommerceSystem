@@ -1,23 +1,28 @@
-## Getting Started
-
-
 # EcommerceSystem
-A simple e-commerce system written in Java for managing products, customers, and transactions.
 
+A small Java demonstration of products, stock, a cart, shipping fees, and checkout. It is an educational console application, not a production commerce system.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Requirements
 
-## Folder Structure
+Java 11 or newer is recommended. No third-party dependencies are required.
 
-The workspace contains two folders by default, where:
+## Build and run
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+```bash
+make build
+make run
+make test
+make clean
+```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Without Make:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```bash
+mkdir -p build/classes
+javac -d build/classes src/*.java
+java -cp build/classes Main
+```
 
-## Dependency Management
+## Known limitations
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+The example currently uses `double` for money, has no persistence, authentication, payment integration, concurrency control, or automated unit tests. Before production use, replace floating-point money with integer minor units or `BigDecimal`, add domain validation, and introduce unit and integration tests. Generated build output is intentionally ignored by Git.
