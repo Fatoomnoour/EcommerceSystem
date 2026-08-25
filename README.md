@@ -1,28 +1,33 @@
-# EcommerceSystem
+# Ecommerce System
 
-A small Java demonstration of products, stock, a cart, shipping fees, and checkout. It is an educational console application, not a production commerce system.
+> A lightweight Java example for modeling products, inventory, shopping carts, shipping, and checkout.
 
-## Requirements
+![Status](https://img.shields.io/badge/status-educational-console-application-blue)
 
-Java 11 or newer is recommended. No third-party dependencies are required.
+## What it does
 
-## Build and run
+**Products → cart → stock validation → shipping → checkout receipt**
+
+## Tech stack
+
+`Java · Object-Oriented Programming · Make`
+
+## Quick start
 
 ```bash
 make build
 make run
 make test
-make clean
 ```
 
-Without Make:
+## Project layout
 
-```bash
-mkdir -p build/classes
-javac -d build/classes src/*.java
-java -cp build/classes Main
-```
+The repository keeps the implementation, configuration, and supporting assets close to the workflow so the project is easy to inspect and reproduce. See the source folders and files for the detailed implementation.
 
-## Known limitations
+## Important notes
 
-The example currently uses `double` for money, has no persistence, authentication, payment integration, concurrency control, or automated unit tests. Before production use, replace floating-point money with integer minor units or `BigDecimal`, add domain validation, and introduce unit and integration tests. Generated build output is intentionally ignored by Git.
+**Status:** Educational console application. Use sample or synthetic data only unless the project documentation explicitly states otherwise. Review the limitations and security notes before any deployment or real-world use.
+
+## License
+
+See the repository license file when present. Contributions and improvements should keep the existing attribution and project history clear.
