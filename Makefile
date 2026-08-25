@@ -1,6 +1,8 @@
 JAVAC ?= javac
 BUILD_DIR := build/classes
+TEST_DIR := build/test-classes
 SOURCES := $(wildcard src/*.java)
+TESTS := $(wildcard tests/*.java)
 
 .PHONY: build run clean test
 build:
@@ -11,7 +13,9 @@ run: build
 	java -cp $(BUILD_DIR) Main
 
 test: build
-	@echo "No automated tests are defined yet; main scenario compiled successfully."
+	mkdir -p $(TEST_DIR)
+	$(JAVAC) -cp $(BUILD_DIR) -d $(TEST_DIR) $(TESTS)
+	java -ea -cp $(BUILD_DIR):$(TEST_DIR) ProductTest
 
 clean:
 	rm -rf build
